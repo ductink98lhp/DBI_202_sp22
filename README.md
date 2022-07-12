@@ -214,7 +214,7 @@
         -> Tách và Tạo TABLE
             TABLE_STUDENTS <-> TABLE_VIEW( ClassID, StudentID, Average, Status ) <-> TABLE_GROUPS
 ##   Chuẩn Hóa Thuộc Tính Các Attribute Trên Từng Bảng 
-
+1.  TABLE STUDENTS
 | Attributes | Type |
 |:---|:---|
 | StudentID   |    Varchar  | 
@@ -344,7 +344,8 @@
 |    CatID       |    Varchar  |
 |    Name        |    Varchar  |
 |    Type        |    Varchar  |
-|    Completion Criteria      |    Varchar  |
+|    Completion Criteria       |    Varchar  |
+|    AssID       |    VarChar  |
 
 --------------------------------------------------------------------------
 14. TABLE ASSESS
@@ -356,12 +357,150 @@
 
 --------------------------------------------------------------------------
 ##   Xác Định Primary Key, Foriegn Key, Attributes Các TABLES
-###     Table1 : Object 1
-            Các Attributes Và Định Dạng Kiểu Dữ Liệu Attributes
-###     Table2 : Object 2
-            Các Attributes Và Định Dạng Kiểu Dữ Liệu Attributes
-###     Table3 : Object 3
-            Các Attributes Và Định Dạng Kiểu Dữ Liệu Attributes
+
+1.  TABLE STUDENTS
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+| StudentID   |    Varchar  | 50 | Not Null | Primary Key
+| Last Name   |    NVarchar | 50 | Not Null |
+| First Name  |    NVarchar | 50 | Not Null |
+| Gender      |    Bit      |    |  Null    |
+| Email       |    Varchar  | 50 | Not Null |
+| DoB         |    Date     | yyyy/mm/dd | Null | 
+
+--------------------------------------------------------------------------
+
+2. TABLE GROUPS
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|    GrID        |    Varchar  | 50 | Not Null | Primary Key
+|    Major       |    Varchar  | 50 | Not Null | 
+
+--------------------------------------------------------------------------
+
+3. TABLE JOIN
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|    GrID        |    Varchar  | 50 | Not Null | Primary Key
+|    StudentID   |    Varchar  | 50 | Not Null | Primary Key
+
+--------------------------------------------------------------------------
+
+4. TABLE LECTURERS
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|    LecID       |    Varchar  | 50 | Not Null | Primary Key
+|    Last Name   |    NVarchar | 50 | Not Null |
+|    First Name  |    NVarchar | 50 | Not Null |
+|    Gender      |    Bit      |    | Null     |
+|    Email       |    Varchar  | 50 | Not Null |
+|    DoB         |    Date     | yyyy/mm/dd | Null |
+|    Report      |    Varchar  | 50 | Not Null | Foreign Key
+
+--------------------------------------------------------------------------
+
+5. TABLE CLASSES
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|    ClassID     |    Varchar  | 50 | Not Null | Primary Key
+|    Semester    |    Varchar  | 50 | Not Null | Primary Key
+|    Start Date  |    Date     | yyyy/mm/dd | Null | 
+|    End Date    |    Date     | yyyy/mm/dd | Null |
+|    AsgID       |    Varchar  | 50 | Not Null | Foreign Key
+
+--------------------------------------------------------------------------
+
+6. TABLE VIEW
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|    StudentID   |    Varchar  | 50 | Not Null | Primary Key
+|    ClassID     |    Varchar  | 50 | Not Null | Primary Key
+|    Average     |    Float    | 15 | Not Null |
+|    Status      |    Varchar  | 50 | Not Null |
+
+--------------------------------------------------------------------------
+7. TABLE ENROLL
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|    GrID        |    Varchar  | 50 | Not Null | Primary Key
+|    ClassID     |    Varchar  | 50 | Not Null | Primary Key
+
+--------------------------------------------------------------------------
+8. TABLE GRADE
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|    StudentID   |    Varchar  | 50 | Not Null | Primary Key
+|    AssID       |    Varchar  | 50 | Not Null | Primary Key
+|    Score       |    Float    | 15 | Not Null |
+|    Date        |    Date     | yyyy/mm/dd | Null | Primary Key
+
+--------------------------------------------------------------------------
+9. TABLE ASSESSMENT_SYSTEM
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|   AssID        |    Varchar  | 50  | Not Null | Primary Key
+|   CatID        |    Varchar  | 50  | Not Null | Foreign Key
+|   CouID        |    Varchar  | 50  | Not Null | Foreign Key
+|   Weigh        |    Float    | 15  | Not Null |
+|   Number Quest |    Varchar  | 50  | Not Null |
+|   Duration     |    Varchar  | 150 | Not Null |
+
+
+--------------------------------------------------------------------------
+10. TABLE ASSIGNMENT
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|    AsgID       |    Varchar  | 50 | Not Null | Primary Key
+|    LecID       |    Varchar  | 50 | Not Null | Foreign Key
+|    Major       |    Varchar  | 50 | Not Null | Poreign Key
+
+--------------------------------------------------------------------------
+11. TABLE COURSE
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|    CouID   |    Varchar  | 50 | Not Null | Primary Key
+|    CName   |    Varchar  | 50 | Not Null |
+|    GuideID |    Varchar  | 50 | Not Null | Foreign Key
+
+--------------------------------------------------------------------------
+12. TABLE GUIDE
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|    GuideID     |    Varchar  | 50  | Not Null | Primary Key
+|    Details     |    Text     | 350 | Not Null |
+
+--------------------------------------------------------------------------
+13. TABLE CATEGORY
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|    CatID       |    Varchar  | 50 | Not Null | Primary Key
+|    Name        |    Varchar  | 50 | Not Null |
+|    Type        |    Varchar  | 50 | Not Null |
+|    Completion Criteria      |    Varchar  | 150 | Not Null |
+|    AssID       |    Varchar  | 50 | Not Null | Foreign Key
+
+--------------------------------------------------------------------------
+14. TABLE ASSESS
+
+| Attributes | Type |Format | Requires | Key 
+|:---|:---|:---|:---|:---
+|    AssID       |    Varchar  | 50 | Not Null | Primary Key
+|    ClassID     |    Varchar  | 50 | Not Null | Primary Key
+
+--------------------------------------------------------------------------
+
 --------------------------------------------------------------------------
 ##   Database_Diagram
 ###     Hình Ảnh Và Mô Tả
