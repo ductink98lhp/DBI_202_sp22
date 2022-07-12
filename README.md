@@ -359,6 +359,7 @@
 ##   Xác Định Primary Key, Foriegn Key, Attributes Các TABLES
 
 1.  TABLE STUDENTS
+
 | Attributes | Type |Format | Requires | Key 
 |:---|:---|:---|:---|:---
 | StudentID   |    Varchar  | 50 | Not Null | Primary Key
