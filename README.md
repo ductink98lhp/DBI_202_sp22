@@ -507,6 +507,8 @@
 --------------------------------------------------------------------------
 ##   Database_Diagram
 ###     Hình Ảnh Và Mô Tả
+![image](https://user-images.githubusercontent.com/76523661/178624618-3645fd18-17ef-41a5-b529-94526dae8446.png)
+
 --------------------------------------------------------------------------
 # Triển Khai DataBase_Diagram Trên Sql_Server
 ##   Creat Table And Attributes
