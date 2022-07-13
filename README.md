@@ -214,7 +214,9 @@
         -> Tách và Tạo TABLE
             TABLE_STUDENTS <-> TABLE_VIEW( ClassID, StudentID, Average, Status ) <-> TABLE_GROUPS
 ##   Chuẩn Hóa Thuộc Tính Các Attribute Trên Từng Bảng 
+
 1.  TABLE STUDENTS
+
 | Attributes | Type |
 |:---|:---|
 | StudentID   |    Varchar  | 
