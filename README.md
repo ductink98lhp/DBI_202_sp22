@@ -514,6 +514,8 @@
 ##   Creat Table And Attributes
 ###     Code sql
 ###     Image + Results
+![image](https://user-images.githubusercontent.com/76523661/179021600-45402c51-c8ba-4bf6-8419-a8faf902daf9.png)
+```       sql
 create table Students(
   StudentID  Varchar(50) Not Null Primary Key,
   Last_Name    NVarchar(50 ) Not Null ,
@@ -611,6 +613,7 @@ create table JOIN_Groups_Students (
   constraint FK_JOIN_Students foreign key (StudentID) references Students(StudentID),
   constraint FK_JOIN_Groups foreign key (GrID) references Groups(GrID)
 )
+```
 ##   Đưa Dữ Liệu Vào DataBase
 ###     Code sql
 ###     Image + Results
