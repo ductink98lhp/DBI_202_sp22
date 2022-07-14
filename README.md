@@ -384,8 +384,8 @@
 
 | Attributes | Type |Format | Requires | Key 
 |:---|:---|:---|:---|:---
-|    GrID        |    Varchar  | 50 | Not Null | Primary Key
-|    StudentID   |    Varchar  | 50 | Not Null | Primary Key
+|    GrID        |    Varchar  | 50 | Not Null | Primary_Foreign Key )
+|    StudentID   |    Varchar  | 50 | Not Null | Primary_Foreign Key )
 
 --------------------------------------------------------------------------
 
@@ -399,7 +399,7 @@
 |    Gender      |    Bit      |    | Null     |
 |    Email       |    Varchar  | 50 | Not Null |
 |    DoB         |    Date     | yyyy/mm/dd | Null |
-|    Report      |    Varchar  | 50 | Not Null | Foreign Key
+|    Report      |    Varchar  | 50 | Null | Foreign Key
 
 --------------------------------------------------------------------------
 
@@ -479,7 +479,7 @@
 | Attributes | Type |Format | Requires | Key 
 |:---|:---|:---|:---|:---
 |    GuideID     |    Varchar  | 50  | Not Null | Primary Key
-|    Details     |    Text     | 350 | Not Null |
+|    Details     |    Varchar  | 350 | Not Null |
 
 --------------------------------------------------------------------------
 13. TABLE CATEGORY
@@ -505,6 +505,8 @@
 --------------------------------------------------------------------------
 ##   Database_Diagram
 ###     Hình Ảnh Và Mô Tả
+![image](https://user-images.githubusercontent.com/76523661/178624618-3645fd18-17ef-41a5-b529-94526dae8446.png)
+
 --------------------------------------------------------------------------
 # Triển Khai DataBase_Diagram Trên Sql_Server
 ##   Creat Table And Attributes
