@@ -1,5 +1,4 @@
-drop database Assignment
-use Demo_sql
+
 Create database Assignment
 use Assignment
 create table Students(
@@ -59,7 +58,7 @@ Create Table ASSESSMENT_SYSTEM
  CatID varchar(50) not null foreign key references Categories(CatID),
  CouID varchar(50) not null foreign key references Courses(CouID),
  Num_Of_Ques int,
- Duration time,
+ Duration varchar(50),
  Weigh    Float,
  GuideID varchar(50) not null foreign key references Guide(GuideID)
 )
