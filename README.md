@@ -2780,6 +2780,13 @@ SELECT * FROM Grade
 
 ```
 ###     Image + Results
+
+![image](https://user-images.githubusercontent.com/76523661/179136915-2dcc4b67-3f05-4dc9-a2a9-348a3bafbea2.png)
+
+![image](https://user-images.githubusercontent.com/76523661/179136990-b758a68e-bd30-4ca7-8aee-7b535c4677c7.png)
+
+![image](https://user-images.githubusercontent.com/76523661/179137049-2f009125-5f91-4e68-9121-a11daadd7cc0.png)
+
 --------------------------------------------------------------------------
 # Kiểm tra, Truy Xuất Dữ Liệu Từ Database
 --------------------------------------------------------------------------
