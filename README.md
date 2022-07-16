@@ -1,6 +1,5 @@
-﻿# DBI_202_sp22
-*** Phân Tích Quản Lý Điểm FLM ***
-# Xác Định Và Tổng Hợp Các Dữ Liệu 
+# DBI_202_SPRING_22 
+# Quản Lí Điểm Flm Database System Report Assignment
 ## Bảng Thông Tin Các Điểm Thành Phần
 ###   ![image](https://user-images.githubusercontent.com/76523661/174473470-0efadd32-427b-475b-93a6-52d2a7179314.png)
 ###   Category (hạng mục)
@@ -565,14 +564,10 @@ Details Varchar(350)
 create table Courses
 (
 CouID varchar(50) not null primary key,
-<<<<<<< HEAD
-CName varchar(50) not null)
-=======
 CName varchar(50) not null,
 GuideID varchar(50) not null foreign key references Guide(GuideID)
 )
 
->>>>>>> 4b5b781f7be4037f1aa1e762f1d6b3274af4f7fe
 create table Categories(
 CatID varchar(50) not null primary key,
 Name varchar(50) not null,
@@ -637,8 +632,7 @@ create table JOIN_Groups_Students (
 ##   Đưa Dữ Liệu Vào DataBase
 ###     Code sql
 ``` sql
-
- INSERT [dbo].[Students] ([StudentID], [Email], [First_Name], [Last_Name], [Gender], [DoB]) VALUES (N'HE00001', N'anv@fpt.edu.vn', N'A', N'Nguyễn Văn', 1, CAST(N'2002-01-01' AS Date))
+INSERT [dbo].[Students] ([StudentID], [Email], [First_Name], [Last_Name], [Gender], [DoB]) VALUES (N'HE00001', N'anv@fpt.edu.vn', N'A', N'Nguyễn Văn', 1, CAST(N'2002-01-01' AS Date))
 
 INSERT [dbo].[Students] ([StudentID], [Email], [First_Name], [Last_Name], [Gender], [DoB]) VALUES (N'HE00002', N'bnv@fpt.edu.vn', N'B', N'Nguyễn Văn', 1, CAST(N'2002-01-02' AS Date))
 
@@ -689,9 +683,8 @@ INSERT [dbo].[Students] ([StudentID], [Email], [First_Name], [Last_Name], [Gende
 INSERT [dbo].[Students] ([StudentID], [Email], [First_Name], [Last_Name], [Gender], [DoB]) VALUES (N'HE00025', N'ynv@fpt.edu.vn', N'Y', N'Nguyễn Văn', 1, CAST(N'2002-01-25' AS Date))
 
 INSERT [dbo].[Students] ([StudentID], [Email], [First_Name], [Last_Name], [Gender], [DoB]) VALUES (N'HE00026', N'znv@fpt.edu.vn', N'Z', N'Nguyễn Văn', 1, CAST(N'2002-01-26' AS Date))
-
-
-
+```
+``` sql
 INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00027', 'anv@fpt.edu.vn', 'A', N'Nguyễn Thị', 0, CAST('02-01-2002' AS DATE));
 INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00028', 'bnv@fpt.edu.vn', 'B', N'Nguyễn Thị', 0, CAST('02-02-2002' AS DATE));
 INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00029', 'cnv@fpt.edu.vn', 'C', N'Nguyễn Thị', 0, CAST('02-03-2002' AS DATE));
@@ -717,7 +710,8 @@ INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALU
 INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00049', 'xnv@fpt.edu.vn', 'X', N'Nguyễn Thị', 0, CAST('02-24-2002' AS DATE));
 INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00050', 'ynv@fpt.edu.vn', 'Y', N'Nguyễn Thị', 0, CAST('02-25-2002' AS DATE));
 
-
+```
+``` sql
 SELECT * FROM Students
 INSERT [dbo].[Courses] ([CouID], [CName]) VALUES (N'CEA201', N'Computer Organization and Architecture')
 INSERT [dbo].[Courses] ([CouID], [CName]) VALUES (N'CSD201', N'Data Structures and Algorithms')
@@ -734,6 +728,8 @@ INSERT [dbo].[Courses] ([CouID], [CName]) VALUES (N'PRF192', N'Programming Funda
 INSERT [dbo].[Courses] ([CouID], [CName]) VALUES (N'PRO192', N'Object-Oriented Programming')
 INSERT [dbo].[Courses] ([CouID], [CName]) VALUES (N'SSG104', N'Communication and In-Group Working Skills')
 INSERT [dbo].[Courses] ([CouID], [CName]) VALUES (N'SSL101c', N'Academic Skills for University Success')
+```
+``` sql
 select * from Courses
 INSERT Groups(GrID, Major) VALUES ('IA1604', 'Information Assurance');
 INSERT Groups(GrID, Major) VALUES ('AI1605', 'Artificial Intelligence');
@@ -742,7 +738,8 @@ INSERT Groups(GrID, Major) VALUES ('IOT1607', 'Internet of Things');
 INSERT Groups(GrID, Major) VALUES ('IA1608', 'Information Assurance');
 INSERT Groups(GrID, Major) VALUES ('SE1609', 'Software Engineering');
 
-
+```
+``` sql
 SELECT * FROM Groups
 
 INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00001', 'IA1604');
@@ -799,8 +796,8 @@ INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00049', 'SE1606');
 INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00050', 'SE1606');
 
 SELECT * FROM [JOIN_Groups_Students]
-
-
+```
+``` sql
 SELECT * FROM Courses
 
 INSERT Lectures(LecID, Email, [First_Name], [Last_Name], Gender, [DoB], Report) VALUES ('GVA', 'gva@fe.edu.vn', 'A', N'Giảng Viên', 1, CAST('01-01-1985' AS date), NULL);
@@ -814,8 +811,8 @@ INSERT Lectures(LecID, Email, [First_Name], [Last_Name], Gender, [DoB], Report) 
 INSERT Lectures(LecID, Email, [First_Name], [Last_Name], Gender, [DoB], Report) VALUES ('GVI', 'gvi@fe.edu.vn', 'I', N'Giảng Viên', 1, CAST('01-09-1985' AS date), 'GVH');
 INSERT Lectures(LecID, Email, [First_Name], [Last_Name], Gender, [DoB], Report) VALUES ('GVJ', 'gvj@fe.edu.vn', 'J', N'Giảng Viên', 0, CAST('01-10-1985' AS date), 'GVH');
 INSERT Lectures(LecID, Email, [First_Name], [Last_Name], Gender, [DoB], Report) VALUES ('GVK', 'gvk@fe.edu.vn', 'K', N'Giảng Viên', 1, CAST('01-11-1985' AS date), 'GVH');
-
-
+```
+``` sql
 SELECT * FROM Lectures
 
 
@@ -849,7 +846,8 @@ INSERT Assignment(AsgID, Major, LecID) VALUES ('FSSG', 'SSG104', 'GVF');
 INSERT Assignment(AsgID, Major, LecID) VALUES ('GSSG', 'SSG104', 'GVG');
 INSERT Assignment(AsgID, Major, LecID) VALUES ('APRO', 'PRO192', 'GVA');
 
-
+```
+``` sql
 SELECT * FROM Assignment
 
 
@@ -914,7 +912,9 @@ INSERT Classes(ClassID, AsgID, Semester, [Start_Date], [End_Date]) VALUES ('SU21
 INSERT Classes(ClassID, AsgID, Semester, [Start_Date], [End_Date]) VALUES ('SU21CLAB', 'CLAB', 'SUMMER 2021', CAST('05-01-2021' AS date), CAST('08-01-2021' AS date));
 INSERT Classes(ClassID, AsgID, Semester, [Start_Date], [End_Date]) VALUES ('SU21FJPD', 'FJPD', 'SUMMER 2021', CAST('05-01-2021' AS date), CAST('08-01-2021' AS date));
 
+```
 
+``` sql
 SELECT * FROM Classes
 SELECT * FROM Groups
 
@@ -957,7 +957,8 @@ INSERT Enroll(ClassID, GrID) VALUES ('FA21CLAB', 'IOT1607')
 INSERT Enroll(ClassID, GrID) VALUES ('FA21FJPD', 'IOT1607')
 INSERT Enroll(ClassID, GrID) VALUES ('FA21BIAO', 'IOT1607')
 
-
+```
+``` sql
 SELECT * FROM Enroll
 
 
@@ -975,7 +976,8 @@ INSERT Categories(CatID, [Name], [Type], [Completion_Criteria]) VALUES ('PE', 'P
 INSERT Categories(CatID, [Name], [Type], [Completion_Criteria]) VALUES ('FE', 'Final Exam', 'Final Exam', '>4');
 INSERT Categories(CatID, [Name], [Type], [Completion_Criteria]) VALUES ('FER', 'Final Exam Retake', 'Final Exam', '>4');
 
-
+```
+``` sql
 SELECT * FROM Categories
 SELECT * FROM Courses 
 
@@ -984,7 +986,8 @@ INSERT Guide(GuideID,Details) VALUES ('1','not complete ')
 INSERT Guide(GuideID,Details) VALUES ('2','Follow chapter and complete marks ')
 INSERT Guide(GuideID,Details) VALUES ('3','Follow chapter and complete marks also practice')
 SELECT * FROM Guide
-
+```
+```sql
 INSERT [Assessment_System](AssID, CatID, CouID, [Num_Of_Ques], Duration, [Weigh], GuideID) VALUES ('CEAAS1', 'AS1', 'CEA201', 20, '30 mins', 0.1,'1'); 
 INSERT [Assessment_System](AssID, CatID, CouID, [Num_Of_Ques], Duration, [Weigh], GuideID) VALUES ('CEAAS2', 'AS2', 'CEA201', 20, '30 mins', 0.1,'1'); 
 INSERT [Assessment_System](AssID, CatID, CouID, [Num_Of_Ques], Duration, [Weigh], GuideID) VALUES ('CEAPT1', 'PT1', 'CEA201', 30, '60 mins', 0.2,'2'); 
@@ -1081,7 +1084,8 @@ INSERT [Assessment_System](AssID, CatID, CouID, [Num_Of_Ques], Duration, [Weigh]
 
 INSERT [Assessment_System](AssID, CatID, CouID, [Num_Of_Ques], Duration, [Weigh], GuideID) VALUES ('SSLFE', 'FE', 'SSL101c', 50, '90 mins', 0.4,'3'); 
 
-
+```
+``` sql
 SELECT * FROM [Assessment_System]
 SELECT * FROM Classes
 
@@ -1156,7 +1160,8 @@ INSERT Assess(AssID, ClassID) VALUES ('CSILAB2', 'FA21ICSI');
 INSERT Assess(AssID, ClassID) VALUES ('CSIPT1', 'FA21ICSI');
 INSERT Assess(AssID, ClassID) VALUES ('CSIPT2', 'FA21ICSI');
 INSERT Assess(AssID, ClassID) VALUES ('CSIFE', 'FA21ICSI');
-
+```
+``` sql
 INSERT Assess(AssID, ClassID) VALUES ('MAEAS1', 'FA21IMAE');
 INSERT Assess(AssID, ClassID) VALUES ('MAEAS2', 'FA21IMAE');
 INSERT Assess(AssID, ClassID) VALUES ('MAELAB1', 'FA21IMAE');
@@ -1286,7 +1291,8 @@ INSERT Assess(AssID, ClassID) VALUES ('PRFLAB2', 'SP22HPRF');
 INSERT Assess(AssID, ClassID) VALUES ('PRFPT', 'SP22HPRF');
 INSERT Assess(AssID, ClassID) VALUES ('PRFPE', 'SP22HPRF');
 INSERT Assess(AssID, ClassID) VALUES ('PRFFE', 'SP22HPRF');
-
+```
+``` sql
 INSERT Assess(AssID, ClassID) VALUES ('MAEAS1', 'SP22IMAE');
 INSERT Assess(AssID, ClassID) VALUES ('MAEAS2', 'SP22IMAE');
 INSERT Assess(AssID, ClassID) VALUES ('MAELAB1', 'SP22IMAE');
@@ -1368,7 +1374,8 @@ INSERT Assess(AssID, ClassID) VALUES ('SSGAS2', 'SU21FSSG');
 INSERT Assess(AssID, ClassID) VALUES ('SSGPT1', 'SU21FSSG');
 INSERT Assess(AssID, ClassID) VALUES ('SSGPT2', 'SU21FSSG');
 INSERT Assess(AssID, ClassID) VALUES ('SSGFE', 'SU21FSSG');
-
+```
+``` sql
 INSERT Assess(AssID, ClassID) VALUES ('OSGAS', 'SU21HOSG');
 INSERT Assess(AssID, ClassID) VALUES ('OSGLAB1', 'SU21HOSG');
 INSERT Assess(AssID, ClassID) VALUES ('OSGLAB2', 'SU21HOSG');
@@ -1415,7 +1422,8 @@ INSERT Assess(AssID, ClassID) VALUES ('CSIPT1', 'SU21KCSI');
 INSERT Assess(AssID, ClassID) VALUES ('CSIPT2', 'SU21KCSI');
 INSERT Assess(AssID, ClassID) VALUES ('CSIFE', 'SU21KCSI');
 
-
+```
+``` sql
 SELECT * FROM Assess
 
 
@@ -1504,7 +1512,8 @@ INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00001', 'PROLAB1', 9.4,
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00001', 'PROLAB2', 7.5, CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00001', 'PROPE', 8.5, CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00001', 'PROPT', 6.5, CAST('2021-12-01' AS date))
-
+```
+``` sql
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00002', 'CEAAS1', 6.5, CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00002', 'CEAAS2', 7.2, CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00002', 'CEAFE', 8.7, CAST('2021-08-01' AS date))
@@ -1624,7 +1633,8 @@ INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00003', 'PRFLAB2', 7.4,
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00003', 'PRFPE', 9.3, CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00003', 'PRFPT', 9.2, CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00003', 'SSLFE', 9.1, CAST('2021-08-01' AS date))
-
+```
+``` sql
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00003', 'MADAS1', 5.1, CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00003', 'MADAS2', 7.2, CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00003', 'MADFE', 7.3, CAST('2021-12-01' AS date))
@@ -1762,7 +1772,8 @@ INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00004', 'JPDLAB2', 7.3,
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00004', 'JPDPT1', 6.3, CAST('2022-04-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00004', 'JPDPT2', 5.6, CAST('2022-04-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00004', 'LABLOC', 800, CAST('2022-04-01' AS date))
-
+```
+``` sql
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00005', 'CEAAS1', 4.3, CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00005', 'CEAAS2', 7.4, CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00005', 'CEAFE', 3.6, CAST('2021-08-01' AS date))
@@ -1882,7 +1893,8 @@ INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00006', 'PRFLAB2', 8.5,
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00006', 'PRFPE', 7.4, CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00006', 'PRFPT', 7.6, CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00006', 'SSLFE', 7.5, CAST('2021-08-01' AS date))
-
+```
+``` sql
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00006', 'MADAS1', 7.6, CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00006', 'MADAS2', 7.2, CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00006', 'MADFE', 7.3, CAST('2021-12-01' AS date))
@@ -1968,7 +1980,8 @@ INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00007', 'PRFLAB2', ROUN
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00007', 'PRFPE', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00007', 'PRFPT', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00007', 'SSLFE', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
-
+```
+``` sql
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00007', 'MADAS1', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00007', 'MADAS2', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00007', 'MADFE', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
@@ -2080,7 +2093,8 @@ INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00008', 'PROLAB1', ROUN
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00008', 'PROLAB2', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00008', 'PROPE', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00008', 'PROPT', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
-
+```
+``` sql
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00008', 'CSDAS', ROUND((RAND()*(10-5)+5),2), CAST('2022-04-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00008', 'CSDFE', ROUND((RAND()*(10-5)+5),2), CAST('2022-04-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00008', 'CSDLAB1', ROUND((RAND()*(10-5)+5),2), CAST('2022-04-01' AS date))
@@ -2192,7 +2206,8 @@ INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00009', 'JPDLAB2', ROUN
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00009', 'JPDPT1', ROUND((RAND()*(10-5)+5),2), CAST('2022-04-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00009', 'JPDPT2', ROUND((RAND()*(10-5)+5),2), CAST('2022-04-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00009', 'LABLOC', 750, CAST('2022-04-01' AS date))
-
+```
+``` sql
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00010', 'CEAAS1', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00010', 'CEAAS2', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00010', 'CEAFE', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
@@ -2312,7 +2327,8 @@ INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00011', 'PRFLAB2', ROUN
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00011', 'PRFPE', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00011', 'PRFPT', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00011', 'SSLFE', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
-
+```
+``` sql
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00011', 'MADAS1', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00011', 'MADAS2', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00011', 'MADFE', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
@@ -2424,7 +2440,8 @@ INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00012', 'PROLAB1', ROUN
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00012', 'PROLAB2', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00012', 'PROPE', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00012', 'PROPT', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
-
+```
+``` sql
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00012', 'CSDAS', ROUND((RAND()*(10-5)+5),2), CAST('2022-04-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00012', 'CSDFE', ROUND((RAND()*(10-5)+5),2), CAST('2022-04-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00012', 'CSDLAB1', ROUND((RAND()*(10-5)+5),2), CAST('2022-04-01' AS date))
@@ -2536,7 +2553,8 @@ INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00013', 'JPDLAB2', ROUN
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00013', 'JPDPT1', ROUND((RAND()*(10-5)+5),2), CAST('2022-04-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00013', 'JPDPT2', ROUND((RAND()*(10-5)+5),2), CAST('2022-04-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00013', 'LABLOC', 1000, CAST('2022-04-01' AS date))
-
+```
+``` sql
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00014', 'CEAAS1', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00014', 'CEAAS2', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00014', 'CEAFE', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
@@ -2656,7 +2674,8 @@ INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00015', 'PRFLAB2', ROUN
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00015', 'PRFPE', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00015', 'PRFPT', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00015', 'SSLFE', ROUND((RAND()*(10-5)+5),2), CAST('2021-08-01' AS date))
-
+```
+``` sql
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00015', 'MADAS1', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00015', 'MADAS2', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00015', 'MADFE', ROUND((RAND()*(10-5)+5),2), CAST('2021-12-01' AS date))
@@ -2708,7 +2727,8 @@ INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00015', 'JPDLAB2', ROUN
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00015', 'JPDPT1', ROUND((RAND()*(10-5)+5),2), CAST('2022-04-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00015', 'JPDPT2', ROUND((RAND()*(10-5)+5),2), CAST('2022-04-01' AS date))
 INSERT Grade(StudentID, AssID, Score, [Date]) VALUES ('HE00015', 'LABLOC', 800, CAST('2022-04-01' AS date))
-
+``` 
+``` sql
 DECLARE @STUDENTID2 VARCHAR(50);
 DECLARE @ASSID VARCHAR(50);
 DECLARE @DATE DATE;
@@ -2733,7 +2753,8 @@ BEGIN
 END
 CLOSE Ins_View_Students_Classes_IA1608_Cursor
 DEALLOCATE Ins_View_Students_Classes_IA1608_Cursor
-
+```
+``` sql
 
 
 DECLARE @STUDENTID VARCHAR(50);
