@@ -793,6 +793,8 @@ SELECT * FROM Students ORDER BY [First_Name], [Last_Name]
 
 ```
 ## Image Result
+![image](https://user-images.githubusercontent.com/76523661/179390019-1c8bcc28-0f9d-4224-83b3-d0cbe2e98401.png)
+
 ##   Query 2
 ``` sql
 -- A QUERY THAT USES INNER JOIN --
@@ -804,6 +806,8 @@ FROM
 			 INNER JOIN Classes ON Enroll.ClassID = Classes.ClassID
 ```
 ## Image Result
+![image](https://user-images.githubusercontent.com/76523661/179390006-a87bb899-a308-437e-9784-0cd19e9613da.png)
+
 ##   Query 3
 ``` sql
 -- A QUERY THAT ESES AGGREGATE FUNCTION --
@@ -815,6 +819,8 @@ FROM
 GROUP BY Lectures.LecID, [Last_Name], [First_Name], Semester
 ```
 ## Image Result
+![image](https://user-images.githubusercontent.com/76523661/179389992-6bb9bb01-5ff9-4f1e-878e-d91298bf72b9.png)
+
 ##   Query 4
 ``` sql
 --  A QUERY THAT USES GROUP BY AND HAVING -- 
@@ -830,6 +836,8 @@ HAVING Lectures.LecID = 'GVA'
 
 ```
 ## Image Result
+![image](https://user-images.githubusercontent.com/76523661/179389974-c695d374-0e26-4825-b91a-3c0fd7130dca.png)
+
 ##   Query 5
 ``` sql
 -- A QUERY THAT USES A SUB-QUERY AS A RELATION --
@@ -859,6 +867,8 @@ ORDER BY LEC.LecID, Major, Semester, CatID
 
 ```
 ## Image Result
+![image](https://user-images.githubusercontent.com/76523661/179389861-4d925786-055a-4d60-ae87-ed056f6a51a9.png)
+
 ##   Query 6
 ``` sql
 --  A QUERY THAT USES A SUB-QUERY IN THE WHERE CLAUSE --
@@ -874,6 +884,8 @@ WHERE J.StudentID = (SELECT StudentID FROM Students WHERE [First_Name] = 'A' AND
 
 ```
 ## Image Result
+![image](https://user-images.githubusercontent.com/76523661/179389877-8f1581e0-a715-4d24-8a81-da6a62f911bd.png)
+
 ##   Query 7
 ``` sql
 --  A QUERY THAT USES PARTIAL MATCHING IN THE WHERE CLAUSE --
@@ -886,6 +898,8 @@ WHERE ClassID LIKE 'FA21%'
 
 ```
 ## Image Result
+![image](https://user-images.githubusercontent.com/76523661/179389887-789bdd61-2ba1-4d7d-9825-c249726f5121.png)
+
 ##   Query 8
 ``` sql
 -- A QUERY THAT USES A SELF-JOIN --
@@ -894,6 +908,9 @@ SELECT Lectures.LecID, Lectures.Email, CONCAT(Lectures.[Last_Name], ' ', Lecture
 FROM Lectures LEFT JOIN Lectures AS [LEADER] ON Lectures.Report = LEADER.LecID
 ```
 ## Image Result
+
+![image](https://user-images.githubusercontent.com/76523661/179389905-4c595d43-3ecc-4993-9932-38d3cca37eb3.png)
+
 ##   Query 9
 ``` sql
 SELECT Lectures.LecID, Lectures.Email, CONCAT(Lectures.[Last_Name], ' ', Lectures.[First_Name]) AS Lecture, Report, Major, Courses.[CName], Semester, Students.StudentID, CONCAT(Students.[Last_Name], ' ', Students.[First_Name]) AS [Student Name], Students.Email, Students.Gender
@@ -907,6 +924,8 @@ FROM
 ORDER BY Lectures.LecID, Semester, Students.StudentID, Major
 ```
 ## Image Result
+![image](https://user-images.githubusercontent.com/76523661/179389926-e9da4884-1af3-472a-9032-a7da48adb2a7.png)
+
 ##   Query 10
 ``` sql
 SELECT Lectures.LecID, Lectures.Email AS [LecID Email], CONCAT(Lectures.[Last_Name], ' ', Lectures.[First_Name]) AS Lecture, J.GrID, CouID, J.StudentID, CONCAT(Students.[Last_Name], ' ', Students.[First_Name]) AS [Student Name], CatID, Score, [Date]
@@ -919,15 +938,23 @@ FROM
 			  INNER JOIN Grade ON J.StudentID = Grade.StudentID AND VAA.AssID = Grade.AssID
 ```
 ## Image Result
-###     Image + Results
+![image](https://user-images.githubusercontent.com/76523661/179389945-7893993a-681f-459e-ae21-4b786b6ab244.png)
+
 
 --------------------------------------------------------------------------
 # Tổng Kết Và Tài Liệu 
-    Như vậy, Cơ bản cở sở dữ liệu đánh giá và truy xuất thông tin quản lí điểm sinh viên đã được hoàn thành. Cách xây dựng cơ sở dữ liệu này đã đáp ứng được các yêu cầu như: thêm, sửa, xóa, truy xuất và dễ dàng theo dõi được hệ thống điểm của từng sinh viên, lớp học và đảm bảo tính chính xác trong từng thời gian chỉnh sửa. Tuy vậy, cơ sở dữ liệu này vẫn chưa được đánh giá và trình bày một cách khoa học để có thể được kế thừa và phát triển ở các lĩnh vực khác. Cảm ơn mọi người đã theo dõi và lắng nghe tiến trình xây dựng cơ sở dữ liệu " Quản Lí Điểm FLM ". 
+    Như vậy, Cơ bản cở sở dữ liệu đánh giá và truy xuất thông tin quản lí điểm sinh viên đã được hoàn thành. 
+    Cách xây dựng cơ sở dữ liệu này đã đáp ứng được các yêu cầu như:
+    thêm, sửa, xóa, truy xuất và dễ dàng theo dõi được hệ thống điểm của từng sinh viên, lớp học và đảm bảo tính chính xác trong từng thời gian chỉnh sửa. 
+    Tuy vậy, cơ sở dữ liệu này vẫn chưa được đánh giá và trình bày một cách khoa học để có thể được kế thừa và phát triển ở các lĩnh vực khác. 
+    Cảm ơn mọi người đã theo dõi và lắng nghe tiến trình xây dựng cơ sở dữ liệu " Quản Lí Điểm FLM ". 
                                                                 Xin trân thành cảm ơn.
                                                                     Người phát triển
                                                                  Nguyễn Văn Đức - HE160307
                                                                         IA1604
-## File < Link Files > SQL Của Database
-## FIle < Link Files > SQL Queries Requirements
+## File SQL Của Database
+https://github.com/ductink98lhp/DBI_202_sp22/blob/main/Create_Table_Assignment.sql
+https://github.com/ductink98lhp/DBI_202_sp22/blob/main/Insert_data_to_asg.sql
+## File SQL Queries Requirements
+https://github.com/ductink98lhp/DBI_202_sp22/blob/main/Query_Assignment.sql
 
