@@ -77,6 +77,21 @@ INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALU
 INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00049', 'xnv@fpt.edu.vn', 'X', N'Nguyễn Thị', 0, CAST('02-24-2002' AS DATE));
 INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00050', 'ynv@fpt.edu.vn', 'Y', N'Nguyễn Thị', 0, CAST('02-25-2002' AS DATE));
 
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00051', 'lnv@fpt.edu.vn', 'L', N'Nguyễn Thị', 0, CAST('02-12-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00052', 'mnv@fpt.edu.vn', 'M', N'Nguyễn Thị', 0, CAST('02-13-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00053', 'nnv@fpt.edu.vn', 'N', N'Nguyễn Thị', 0, CAST('02-14-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00054', 'onv@fpt.edu.vn', 'O', N'Nguyễn Thị', 0, CAST('02-15-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00055', 'pnv@fpt.edu.vn', 'P', N'Nguyễn Thị', 0, CAST('02-16-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00056', 'qnv@fpt.edu.vn', 'Q', N'Nguyễn Thị', 0, CAST('02-17-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00057', 'rnv@fpt.edu.vn', 'R', N'Nguyễn Thị', 0, CAST('02-18-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00058', 'snv@fpt.edu.vn', 'S', N'Nguyễn Thị', 0, CAST('02-19-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00059', 'tnv@fpt.edu.vn', 'T', N'Nguyễn Thị', 0, CAST('02-20-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00060', 'unv@fpt.edu.vn', 'U', N'Nguyễn Thị', 0, CAST('02-21-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00061', 'vnv@fpt.edu.vn', 'V', N'Nguyễn Thị', 0, CAST('02-22-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00062', 'wnv@fpt.edu.vn', 'W', N'Nguyễn Thị', 0, CAST('02-23-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00063', 'xnv@fpt.edu.vn', 'X', N'Nguyễn Thị', 0, CAST('02-24-2002' AS DATE));
+INSERT Students(StudentID, Email, [First_Name], [Last_Name], Gender, [DoB]) VALUES ('HE00064', 'ynv@fpt.edu.vn', 'Y', N'Nguyễn Thị', 0, CAST('02-25-2002' AS DATE));
+
 
 SELECT * FROM Students
 INSERT [dbo].[Courses] ([CouID], [CName]) VALUES (N'CEA201', N'Computer Organization and Architecture')
@@ -157,6 +172,22 @@ INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00047', 'SE1606');
 INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00048', 'SE1606');
 INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00049', 'SE1606');
 INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00050', 'SE1606');
+
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00051', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00052', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00053', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00054', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00055', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00056', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00057', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00058', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00059', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00060', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00061', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00062', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00063', 'IA1608');
+INSERT [JOIN_Groups_Students](StudentID, GrID) VALUES ('HE00064', 'IA1608');
+
 
 SELECT * FROM [JOIN_Groups_Students]
 
@@ -2084,17 +2115,14 @@ FROM
 		INNER join [Assessment_System] AS [AS] ON [AS].AssID = Assess.AssID
 ORDER BY 1
 OPEN Ins_View_Students_Classes_IA1608_Cursor
-
 FETCH NEXT FROM Ins_View_Students_Classes_IA1608_Cursor INTO @STUDENTID2, @ASSID, @DATE
 WHILE @@FETCH_STATUS = 0
 BEGIN 
-	INSERT Grade(StudentID, AssID, Score, [Date]) VALUES (@STUDENTID2, @ASSID, ROUND((RAND()*(10-5)+5),2), @DATE)
+	update Grade set Score = ROUND((RAND()*(10-5)+5),2) where  grade.StudentID =@STUDENTID2 and grade.AssID = @ASSID and grade.[Date]=@DATE 
 	FETCH NEXT FROM Ins_View_Students_Classes_IA1608_Cursor INTO @STUDENTID2, @ASSID, @DATE
 END
 CLOSE Ins_View_Students_Classes_IA1608_Cursor
 DEALLOCATE Ins_View_Students_Classes_IA1608_Cursor
-
-
 
 DECLARE @STUDENTID VARCHAR(50);
 DECLARE @CLID VARCHAR(50);
@@ -2134,5 +2162,5 @@ CLOSE Ins_View_Students_Classes_Cursor
 DEALLOCATE Ins_View_Students_Classes_Cursor
 
 SELECT * FROM Grade 
-
+SELECT * FROM View_Students_Classes
 

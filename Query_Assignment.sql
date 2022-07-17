@@ -88,6 +88,7 @@ FROM
 	Students INNER JOIN JOIN_Groups_Students ON Students.StudentID = JOIN_Groups_Students.StudentID
 			 INNER JOIN Enroll ON Enroll.GrID = JOIN_Groups_Students.GrID
 			 INNER JOIN Classes ON Enroll.ClassID = Classes.ClassID
+			 
 
 
 -- 3: A QUERY THAT ESES AGGREGATE FUNCTION --
@@ -113,7 +114,7 @@ HAVING Lectures.LecID = 'GVA'
 
 -- 5: A QUERY THAT USES A SUB-QUERY AS A RELATION --
 
-SELECT LEC.LecID, LEC.[Last_Name], LEC.[First_Name], Major, Semester, CouID, [AS].CatID
+SELECT LEC.LecID, LEC.[Last_Name], LEC.[First_Name], Major, Semester, CouID, [AS].CatID,Details
 FROM 
 	(SELECT LecID,[Last_Name], [First_Name] FROM Lectures) AS LEC
 		INNER JOIN 
@@ -126,11 +127,14 @@ FROM
 			Assess 
 			ON Assess.ClassID = CLASS.ClassID
 		INNER JOIN
-			(SELECT AssID, CouID, CatID FROM [Assessment_System]) AS [AS]
+			(SELECT AssID, CouID, CatID,GuideID FROM [Assessment_System]) AS [AS]
 			ON Assess.AssID = [AS].AssID
 		INNER JOIN 
 			Categories
 			ON [AS].CatID = Categories.CatID
+		INNER JOIN 
+			Guide
+			on [AS].GuideID = Guide.GuideID
 ORDER BY LEC.LecID, Major, Semester, CatID
 
 
